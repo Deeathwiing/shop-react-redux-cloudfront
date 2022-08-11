@@ -1,4 +1,4 @@
-service: my-store-app-andrei-karotkin
+service: my-store-app-andrei-karotkin-auto
 
 frameworkVersion: "3"
 
@@ -19,7 +19,7 @@ plugins:
 
 custom:
   client:
-    bucketName: my-store-app-andrei-karotkin
+    bucketName: my-store-app-andrei-karotkin-auto
     distributionFolder: dist
   s3BucketName: ${self:custom.client.bucketName}
 
