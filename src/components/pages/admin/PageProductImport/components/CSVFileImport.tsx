@@ -32,16 +32,16 @@ export default function CSVFileImport({ url, title }: CSVFileImportProps) {
       params: {
         // eslint-disable-next-line @typescript-eslint/ban-ts-comment
         // @ts-ignore
-        name: encodeURIComponent(file.name),
-      },
+        name: encodeURIComponent(file.name)
+      }
     });
     // eslint-disable-next-line @typescript-eslint/ban-ts-comment
     // @ts-ignore
     console.log("File to upload: ", file.name);
     console.log("Uploading to: ", response.data);
-    const result = await fetch(response.data, {
+    const result = await fetch(response.data.response, {
       method: "PUT",
-      body: file,
+      body: file
     });
     console.log("Result: ", result);
     setFile(undefined);
