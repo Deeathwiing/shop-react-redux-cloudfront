@@ -25,7 +25,7 @@ export default function CSVFileImport({ url, title }: CSVFileImportProps) {
 
   const uploadFile = async () => {
     console.log("uploadFile to", url);
-    const token = localStorage.getItem("token");
+    const authorization_token = localStorage.getItem("authorization_token");
 
     const response = await axios({
       method: "GET",
@@ -36,7 +36,9 @@ export default function CSVFileImport({ url, title }: CSVFileImportProps) {
         name: encodeURIComponent(file.name),
       },
       headers: {
-        Authorization: token ? `Basic ${token}` : "",
+        Authorization: authorization_token
+          ? `Basic ${authorization_token}`
+          : "",
       },
     });
     // eslint-disable-next-line @typescript-eslint/ban-ts-comment
